@@ -189,6 +189,8 @@ function setupIntroAnimation() {
         cancelAnimationFrame(animFrameId);
 
         overlay.classList.add('shrink');
+        // 点击开始就显示内容，不再等图片加载
+        document.body.style.opacity = '1';
 
         const ballRect = introBall.getBoundingClientRect();
         const homeSection = document.getElementById('home');
@@ -1579,9 +1581,14 @@ function checkVisibility() {
 // 启动书籍旋转动画
 requestAnimationFrame(updateBookRotation);
 
-// 页面加载完成
-window.addEventListener('load', () => {
-    document.body.style.opacity = '1';
+// 页面加载兜底保护：如果开场动画出问题，3秒后强制显示内容
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const overlay = document.getElementById('introOverlay');
+        if (!overlay || overlay.style.display === 'none' || overlay.classList.contains('shrink')) {
+            document.body.style.opacity = '1';
+        }
+    }, 3000);
 });
 
 document.body.style.opacity = '0';
