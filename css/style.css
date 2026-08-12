@@ -151,7 +151,7 @@ body::after {
 .intro-lets-go {
     margin-top: 50px;
     padding: 8px 20px;
-    font-family: 'Nunito', 'Ma Shan Zheng', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 700;
     font-size: 1.4em;
     color: #6b8e6b;
@@ -1781,7 +1781,7 @@ body::after {
 }
 
 .card-title-cn {
-    font-family: 'Ma Shan Zheng', cursive;
+    font-family: 'Zhi Mang Xing', cursive;
     color: #8a7560;
     font-size: 1.4em;
 }
