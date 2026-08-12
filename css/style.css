@@ -1284,13 +1284,16 @@ body::after {
     width: 70px;
     height: 90px;
     cursor: pointer;
-    transition: transform 0.3s var(--ease-soft);
     transform-origin: center center;
+    /* 注意：不能加 transition: transform，否则与 JS 每帧旋转冲突，导致书本滞后漂移 */
 }
 
 .book-on-shelf:hover {
-    transform: scale(1.2) !important;
     z-index: 10;
+}
+
+.book-on-shelf:hover .book-cover {
+    transform: scale(1.2);
 }
 
 .book-cover {
