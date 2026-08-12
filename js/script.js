@@ -925,8 +925,7 @@ function setupBookCircle() {
 }
 
 function updateBookRotation() {
-    // 摩擦衰减：0.9 让停止更快（原 0.95 停止太慢）
-    bookScrollSpeed *= 0.9;
+    bookScrollSpeed *= 0.95;
     bookRotation += bookScrollSpeed;
     
     if (bookCircle) {
