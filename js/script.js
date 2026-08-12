@@ -189,8 +189,6 @@ function setupIntroAnimation() {
         cancelAnimationFrame(animFrameId);
 
         overlay.classList.add('shrink');
-        // 点击开始就显示内容，不再等图片加载
-        document.body.style.opacity = '1';
 
         const ballRect = introBall.getBoundingClientRect();
         const homeSection = document.getElementById('home');
@@ -1581,15 +1579,5 @@ function checkVisibility() {
 // 启动书籍旋转动画
 requestAnimationFrame(updateBookRotation);
 
-// 页面加载兜底保护：如果开场动画出问题，3秒后强制显示内容
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        const overlay = document.getElementById('introOverlay');
-        if (!overlay || overlay.style.display === 'none' || overlay.classList.contains('shrink')) {
-            document.body.style.opacity = '1';
-        }
-    }, 3000);
-});
-
-document.body.style.opacity = '0';
-document.body.style.transition = 'opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+// 注意：不使用 body opacity=0 隐藏内容，因为那会连开场动画一起隐藏。
+// 开场动画层 (.intro-overlay, z-index 9999) 本身就会盖住内容，点击 Let's Go 后自然消失。
