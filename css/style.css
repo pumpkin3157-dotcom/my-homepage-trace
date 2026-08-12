@@ -26,7 +26,7 @@ html {
 
 body {
     font-family: var(--font-zh);
-    background-image: url('../images/1.png');
+    background-image: url('../images/1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -142,7 +142,7 @@ body::after {
 .intro-lets-go {
     margin-top: 50px;
     padding: 8px 20px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', 'Ma Shan Zheng', sans-serif;
     font-weight: 700;
     font-size: 1.4em;
     color: #6b8e6b;
@@ -1772,7 +1772,7 @@ body::after {
 }
 
 .card-title-cn {
-    font-family: 'Zhi Mang Xing', cursive;
+    font-family: 'Ma Shan Zheng', cursive;
     color: #8a7560;
     font-size: 1.4em;
 }
