@@ -549,7 +549,7 @@ function setupCarousel() {
         photoEl.dataset.index = index;
         photoEl.innerHTML = `
             <div class="photo-placeholder">
-                <img src="./images/${photo.file}" alt="${photo.location}">
+                <img src="./images/${photo.file}" alt="${photo.location}" loading="lazy">
             </div>
         `;
         stack.appendChild(photoEl);

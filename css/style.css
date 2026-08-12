@@ -9,6 +9,20 @@ html {
     scroll-behavior: smooth;
 }
 
+/* 固定背景改用伪元素实现，避免 background-attachment:fixed 在移动端滚动卡顿 */
+html::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('../images/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    will-change: transform;
+}
+
 :root {
     --font-en: 'Caveat', cursive;
     --font-zh: 'Ma Shan Zheng', cursive;
@@ -26,11 +40,6 @@ html {
 
 body {
     font-family: var(--font-zh);
-    background-image: url('../images/1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     color: var(--color-text);
     overflow-x: hidden;
     font-size: 18px;
